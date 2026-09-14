@@ -1,4 +1,64 @@
-import type {Metadata} from 'next'; 
-import './globals.css'; import {Navbar} from '@/components/layout/Navbar'; import {Footer} from '@/components/layout/Footer'; import {doctor} from '@/data/doctor'; import {siteMetadata} from '@/lib/seo';
-export const metadata:Metadata=siteMetadata;
-export default function RootLayout({children}:{children:React.ReactNode}){const jsonLd={"@context":"https://schema.org","@type":"MedicalClinic",name:doctor.clinicName,telephone:doctor.phone,address:{"@type":"PostalAddress",streetAddress:doctor.address,addressLocality:doctor.location.split(',')[0],addressRegion:'Uttar Pradesh',addressCountry:'IN'},openingHours:doctor.hours,medicalSpecialty:doctor.specialization,physician:{"@type":"Physician",name:doctor.name}};return <html lang="en"><body><Navbar/><main>{children}</main><Footer/><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(jsonLd)}}/></body></html>}
+import type { Metadata, Viewport } from "next";
+
+import "./globals.css";
+
+import Chatbot from "@/components/chat/Chatbot";
+import { Navbar } from "@/components/layout/Navbar";
+import { Footer } from "@/components/layout/Footer";
+import { doctor } from "@/data/doctor";
+import { siteMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = siteMetadata;
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "MedicalClinic",
+    name: doctor.clinicName,
+    telephone: doctor.phone,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: doctor.address,
+      addressLocality: doctor.location.split(",")[0],
+      addressRegion: "Uttar Pradesh",
+      addressCountry: "IN",
+    },
+    openingHours: doctor.hours,
+    medicalSpecialty: doctor.specialization,
+    physician: {
+      "@type": "Physician",
+      name: doctor.name,
+    },
+  };
+
+  return (
+    <html lang="en" data-scroll-behavior="smooth">
+      <body>
+        
+        <Navbar />
+
+        <main>{children}</main>
+
+        <Footer />
+
+        <Chatbot />
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(jsonLd),
+          }}
+        />
+      </body>
+    </html>
+  );
+}
