@@ -44,13 +44,13 @@ export default function RootLayout({
     <html lang="en" data-scroll-behavior="smooth">
       <body>
         
+        <Chatbot />
         <Navbar />
 
         <main>{children}</main>
 
         <Footer />
 
-        <Chatbot />
 
         <script
           type="application/ld+json"

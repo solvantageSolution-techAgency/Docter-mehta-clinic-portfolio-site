@@ -132,7 +132,7 @@ export default function Chatbot() {
   }
 
   return (
-    <>
+    <div >
       {/* Mobile backdrop */}
       {isOpen && (
         <button
@@ -155,7 +155,7 @@ export default function Chatbot() {
           aria-label="Clinic chat assistant"
           className="
             fixed
-            z-[9998]
+            z-9998
 
             bottom-0
             left-0
@@ -164,7 +164,7 @@ export default function Chatbot() {
             h-[min(680px,100dvh)]
             w-full
 
-            overflow-hidden
+            overflow-scroll
             rounded-t-2xl
             border
             border-slate-200
@@ -417,6 +417,6 @@ export default function Chatbot() {
         isOpen={isOpen}
         onClick={() => setIsOpen((current) => !current)}
       />
-    </>
+    </div>
   );
 }

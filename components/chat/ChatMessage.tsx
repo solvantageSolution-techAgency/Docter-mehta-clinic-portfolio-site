@@ -1,6 +1,7 @@
 "use client";
 
 import { Bot, User } from "lucide-react";
+import Chatbot from "./Chatbot";
 
 export type ChatMessageType = {
   id: string;

@@ -1,6 +1,8 @@
 "use client";
 
 import { MessageCircle, X } from "lucide-react";
+import Image from "next/image";
+import ChatIcon from '@/public/chat-bot.svg';
 
 type ChatButtonProps = {
   isOpen: boolean;
@@ -17,13 +19,14 @@ export default function ChatButton({
       onClick={onClick}
       aria-label={isOpen ? "Close chat" : "Open chat"}
       className="
+      
         fixed
-        right-4
-        bottom-4
+        right-14
+        bottom-14
         z-[9999]
         flex
-        h-14
-        w-14
+        h-40
+        w-40
         items-center
         justify-center
         rounded-full
@@ -48,7 +51,13 @@ export default function ChatButton({
       {isOpen ? (
         <X className="h-6 w-6 sm:h-7 sm:w-7" />
       ) : (
-        <MessageCircle className="h-6 w-6 sm:h-7 sm:w-7" />
+      <Image
+    src="/chat-bot.svg"
+    alt=""
+    width={56}
+    height={56}
+    className="h-12 w-12 object-contain sm:h-14 sm:w-14"
+  />
       )}
 
       {!isOpen && (
