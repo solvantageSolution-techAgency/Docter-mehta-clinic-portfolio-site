@@ -133,6 +133,10 @@ export default function Chatbot() {
 
   return (
     <div >
+       <ChatButton
+        isOpen={isOpen}
+        onClick={() => setIsOpen((current) => !current)}
+      />
       {/* Mobile backdrop */}
       {isOpen && (
         <button
@@ -413,10 +417,7 @@ export default function Chatbot() {
       )}
 
       {/* Floating button */}
-      <ChatButton
-        isOpen={isOpen}
-        onClick={() => setIsOpen((current) => !current)}
-      />
+     
     </div>
   );
 }

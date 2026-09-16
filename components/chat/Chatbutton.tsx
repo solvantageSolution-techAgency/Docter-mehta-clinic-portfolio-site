@@ -25,8 +25,8 @@ export default function ChatButton({
         bottom-14
         z-[9999]
         flex
-        h-40
-        w-40
+        h-24
+        w-24
         items-center
         justify-center
         rounded-full
@@ -44,8 +44,8 @@ export default function ChatButton({
         focus:ring-[#123B63]/20
         sm:right-6
         sm:bottom-6
-        sm:h-16
-        sm:w-16
+        sm:h-32
+        sm:w-32
       "
     >
       {isOpen ? (
