@@ -44,8 +44,8 @@ export default function ChatButton({
         focus:ring-[#123B63]/20
         sm:right-6
         sm:bottom-6
-        sm:h-32
-        sm:w-32
+        sm:h-28
+        sm:w-28
       "
     >
       {isOpen ? (
